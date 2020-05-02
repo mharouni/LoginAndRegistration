@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <style>
+      body{
+        background-color:lightblue;
+      }
+      div {
+          position: absolute;
+          top:;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          width: 500px;
+          height: 500px;
+    button{
+            background-color: white;
+
+          color: black;
+
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+
+          cursor: pointer;
+          width:150px;
+          height:40px;
+
+          }
+      }
+    </style>
+  </head>
+  <body>
+
+
+
+
+
+
+
+
+
+<form name="login" action="search.php" onsubmit="return func()" method="POST"  >
+
+<div class="container">
+
+  <label for="userName">Username</label>
+  <input type="text" placeholder="Enter Email" name="emailAdr" >
+  <br>
+  <label for="passWord">Password</label>
+  <input type="password" placeholder="EnterPassword" name="passWord" id="pw">
+  <br>
+  <button type="submit" style="color: grey" style="opacity=1.0">Submit</button>
+
+</div>
+
+</form>
+</body>
+<script type="text/javascript">
+  function func()
+  {
+    var x = document.forms["login"]["passWord"].value;
+    if (x == "")
+    {
+      alert("password can't be empty")
+      return false;
+    }
+    else {
+      var y = document.forms["login"]["emailAdr"].value;
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if (re.test(String(y).toLowerCase()))
+        {
+
+          return true;
+        }
+        else {
+          alert("You have entered an invalid email address!");
+          return false;
+        }
+
+
+    }
+
+  }
+</script>
+</html>
